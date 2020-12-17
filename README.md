@@ -32,3 +32,5 @@ The `hibernate-jpamodelgen` writes the generated metamodel classes into `target/
 Maven picks it up.
 
 This works in IntelliJ too, as long as you enable annotation processing in the settings.
+
+The metamodel classes are used in the `TaskRepository2` class.
