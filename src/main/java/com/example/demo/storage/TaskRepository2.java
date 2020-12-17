@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -30,6 +29,7 @@ public class TaskRepository2 {
         return this.entityManager.createQuery(criteria).getResultList();
     }
 
+    @Transactional(readOnly = true)
     public List<Task> findAll() {
         return this.entityManager.createQuery("SELECT t FROM Task t", Task.class).getResultList();
     }
